@@ -24,34 +24,34 @@ struct TABView: View {
 
             // MARK: Tela do calendario
             withAnimation {
-                TelaInicial()
+                Calendario()
                     .tabItem {
                         Label(
-                            "Calendadio",
+                            "Calendário",
                             systemImage:
-                                "list.bullet"
+                                "calendar"
                         )
                     }
             }
             // MARK: Tela do Pomodoro
             withAnimation {
-                TelaInicial()
+                Pomodoro()
                     .tabItem {
                         Label(
-                            "Tarefas",
+                            "Pomodoro",
                             systemImage:
-                                "list.bullet"
+                                "timer"
                         )
                     }
             }
             // MARK: Tela do Guia
             withAnimation {
-                TelaInicial()
+                Guia()
                     .tabItem {
                         Label(
-                            "Tarefas",
+                            "Guia",
                             systemImage:
-                                "list.bullet"
+                                "signpost.right.and.left"
                         )
                     }
             }
