@@ -6,3 +6,17 @@
 //
 
 import Foundation
+
+class Atividade {
+    var nome: String = ""
+    var icone: String = ""
+    var dias: [Date] = []
+    var prioridade: String = ""
+    
+    init(nome: String, icone: String, dias: [Date], prioridade: String) {
+        self.nome = nome
+        self.icone = icone
+        self.dias = dias
+        self.prioridade = prioridade
+    }
+}
