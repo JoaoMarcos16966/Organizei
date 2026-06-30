@@ -9,8 +9,16 @@ import SwiftUI
 
 struct Guia: View {
     var body: some View {
-        Text("Guia")
+        NavigationStack {
+            List {
+                
+            }
+            .navigationTitle("Guia do Estudante")
+        }
+  
+        
     }
+    
 }
 
 #Preview {
