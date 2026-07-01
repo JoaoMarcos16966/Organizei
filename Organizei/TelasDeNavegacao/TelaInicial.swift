@@ -10,13 +10,14 @@ import SwiftUI
 
 struct TelaInicial: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            
+            ScrollView {
+                
+                
+            }
+            
         }
-        .padding()
     }
 }
 
