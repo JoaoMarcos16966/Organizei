@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CE58C2442FF54C5000AA4DE1 /* HDatePicker in Frameworks */ = {isa = PBXBuildFile; productRef = CE58C2432FF54C5000AA4DE1 /* HDatePicker */; };
+		CEE76AA72FF5C61B0021E5A3 /* HDatePicker in Frameworks */ = {isa = PBXBuildFile; productRef = CEE76AA62FF5C61B0021E5A3 /* HDatePicker */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE58C2442FF54C5000AA4DE1 /* HDatePicker in Frameworks */,
+				CEE76AA72FF5C61B0021E5A3 /* HDatePicker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,7 +70,7 @@
 			);
 			name = Organizei;
 			packageProductDependencies = (
-				CE58C2432FF54C5000AA4DE1 /* HDatePicker */,
+				CEE76AA62FF5C61B0021E5A3 /* HDatePicker */,
 			);
 			productName = Organizei;
 			productReference = 17096F8E2FED5BDB0099B42B /* Organizei.app */;
@@ -101,7 +101,7 @@
 			mainGroup = 17096F852FED5BDB0099B42B;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				CE58C2422FF54C5000AA4DE1 /* XCRemoteSwiftPackageReference "HDatePicker" */,
+				CECA36482FF5C29000C5886B /* XCRemoteSwiftPackageReference "HDatePicker_for_Pt-BR_Calendar" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 17096F8F2FED5BDB0099B42B /* Products */;
@@ -262,7 +262,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = DT5DW5W66L;
+				DEVELOPMENT_TEAM = 8DZGCRL35K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -294,7 +294,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = DT5DW5W66L;
+				DEVELOPMENT_TEAM = 8DZGCRL35K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -343,9 +343,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		CE58C2422FF54C5000AA4DE1 /* XCRemoteSwiftPackageReference "HDatePicker" */ = {
+		CECA36482FF5C29000C5886B /* XCRemoteSwiftPackageReference "HDatePicker_for_Pt-BR_Calendar" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/alexphanna/HDatePicker";
+			repositoryURL = "https://github.com/joao-vmoraes/HDatePicker_for_Pt-BR_Calendar";
 			requirement = {
 				branch = main;
 				kind = branch;
@@ -354,9 +354,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		CE58C2432FF54C5000AA4DE1 /* HDatePicker */ = {
+		CEE76AA62FF5C61B0021E5A3 /* HDatePicker */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = CE58C2422FF54C5000AA4DE1 /* XCRemoteSwiftPackageReference "HDatePicker" */;
+			package = CECA36482FF5C29000C5886B /* XCRemoteSwiftPackageReference "HDatePicker_for_Pt-BR_Calendar" */;
 			productName = HDatePicker;
 		};
 /* End XCSwiftPackageProductDependency section */

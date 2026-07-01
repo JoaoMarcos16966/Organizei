@@ -10,12 +10,11 @@ import SwiftUI
 
 struct TelaInicial: View {
     @State var selectedDay: Date = .now
-    //    @State var diaDeHoje: Date = .now
 
     var body: some View {
         @State var TituloDaNavegacao: String =
             Calendar.current.isDate(Date.now, inSameDayAs: selectedDay)
-        ? "Hoje" : "\(selectedDay.formatted(.dateTime.day().month(.wide)))"
+        ? "Hoje" : selectedDay.formatted(.dateTime.day().month(.wide).locale(Locale(identifier: "pt_BR")))
 
         NavigationStack {
 

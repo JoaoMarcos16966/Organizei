@@ -1,13 +1,13 @@
 {
-  "originHash" : "c3ef898520f127b51d978c923d1e3589140d0a85a577c6890841e0d72033de23",
+  "originHash" : "c75f01edceb4e35c55efd13bedf46d269e0103477e6728ff8c02b73cbfeee75d",
   "pins" : [
     {
-      "identity" : "hdatepicker",
+      "identity" : "hdatepicker_for_pt-br_calendar",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/alexphanna/HDatePicker",
+      "location" : "https://github.com/joao-vmoraes/HDatePicker_for_Pt-BR_Calendar",
       "state" : {
         "branch" : "main",
-        "revision" : "9d3d123888fcba870b5b28037cae2442d035ab8f"
+        "revision" : "f4ee23a6f16da194e5d0b766e46acd8fc80565db"
       }
     }
   ],
