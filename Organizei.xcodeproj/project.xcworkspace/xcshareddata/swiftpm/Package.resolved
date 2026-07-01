@@ -1,0 +1,15 @@
+{
+  "originHash" : "c3ef898520f127b51d978c923d1e3589140d0a85a577c6890841e0d72033de23",
+  "pins" : [
+    {
+      "identity" : "hdatepicker",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/alexphanna/HDatePicker",
+      "state" : {
+        "branch" : "main",
+        "revision" : "9d3d123888fcba870b5b28037cae2442d035ab8f"
+      }
+    }
+  ],
+  "version" : 3
+}

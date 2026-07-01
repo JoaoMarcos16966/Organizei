@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		CE58C2442FF54C5000AA4DE1 /* HDatePicker in Frameworks */ = {isa = PBXBuildFile; productRef = CE58C2432FF54C5000AA4DE1 /* HDatePicker */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		17096F8E2FED5BDB0099B42B /* Organizei.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Organizei.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -23,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE58C2442FF54C5000AA4DE1 /* HDatePicker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +70,7 @@
 			);
 			name = Organizei;
 			packageProductDependencies = (
+				CE58C2432FF54C5000AA4DE1 /* HDatePicker */,
 			);
 			productName = Organizei;
 			productReference = 17096F8E2FED5BDB0099B42B /* Organizei.app */;
@@ -94,6 +100,9 @@
 			);
 			mainGroup = 17096F852FED5BDB0099B42B;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				CE58C2422FF54C5000AA4DE1 /* XCRemoteSwiftPackageReference "HDatePicker" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 17096F8F2FED5BDB0099B42B /* Products */;
 			projectDirPath = "";
@@ -332,6 +341,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CE58C2422FF54C5000AA4DE1 /* XCRemoteSwiftPackageReference "HDatePicker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alexphanna/HDatePicker";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CE58C2432FF54C5000AA4DE1 /* HDatePicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE58C2422FF54C5000AA4DE1 /* XCRemoteSwiftPackageReference "HDatePicker" */;
+			productName = HDatePicker;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 17096F862FED5BDB0099B42B /* Project object */;
 }

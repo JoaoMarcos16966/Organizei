@@ -12,7 +12,7 @@ struct TelaModeloAtividade: View {
 
         ZStack(alignment: .leading) {
             Rectangle()
-                .fill(Color(red: 187/255, green: 176/255, blue: 255/255))
+                .fill(Color(red: 187/255, green: 176/255, blue: 255/255)) // alterar para Atividade.prioridade.cor
                 .frame(width: 345, height: 96)
                 .cornerRadius(10)
                 .overlay(
@@ -23,15 +23,16 @@ struct TelaModeloAtividade: View {
                                 .frame(width: 77, height: 77)
                                 .cornerRadius(10)
 
-                            Image(systemName: "pencil")
+                            Image(systemName: "pencil") // alterar para Atividade.icone
                                 .font(.largeTitle)
                             
                         }
                         .padding(10)
                         
                         VStack {
-                            Text("Planejamento")
+                            Text("Estudar")
                                 .font(.title3)
+                                .frame(width: 118 ,  alignment: .leading)
                             
                             Text("Seg, Ter, Qua...")
                                 .font(.caption2)
@@ -47,6 +48,7 @@ struct TelaModeloAtividade: View {
                                 .frame(width: 118 , height: 5, alignment: .leading)
                             
                                 }
+                            .frame(width: 168 ,  alignment: .leading)
                         
                     Spacer()
                         
