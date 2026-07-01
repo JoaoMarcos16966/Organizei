@@ -1,5 +1,5 @@
 //
-//  MetodosEstudoAtivo.swift
+//  TempoQualidade.swift
 //  Organizei
 //
 //  Created by João Marcos Pimentel Nascimento de Lima  on 01/07/26.
@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct MetodosEstudoAtivo: View {
+struct TempoQualidade: View {
     var body: some View {
         ZStack {
                 VStack {
                     LinearGradient(
                         colors: [
-                            Color.blue.opacity(0.6),
+                            Color.green.opacity(0.6),
                             Color(uiColor: .systemBackground),
                             
                         ],
@@ -34,18 +34,18 @@ struct MetodosEstudoAtivo: View {
                     VStack(alignment: .leading, spacing: 10) {
                         HStack {
                             Spacer()
-                            Image(systemName: "book.closed")
-                                .font(.system(size: 72))
+                            Image(systemName: "clock.arrow.trianglehead.counterclockwise.rotate.90")
+                                .font(.system(size: 69))
                             Spacer()
                         }
                         Spacer()
                         Spacer()
                         
                         
-                        Text("Métodos de Estudo Ativo")
+                        Text("Tempo de Qualidade")
                             .font(.title).bold()
                         
-                        Text("Aprenda técnicas de estudo que trabalham ativamente o cérebro")
+                        Text("É a arte de focar no que traz resultado real, otimizando sua energia e seu tempo!")
                             .font(.body)
                             .foregroundColor(.secondary)
                     }
@@ -60,11 +60,7 @@ struct MetodosEstudoAtivo: View {
                             DetalhePaginasGuias(
                                 titulo: "Estudo Ativo vs Passivo",
                                 passos: [
-                                    PassoGuia(imagem: "Ativo", titulo: "Estudo Ativo", descricao: "O estudo ativo é uma abordagem de aprendizado onde o estudante é estimulado a processar, analisar e gerar algo a partir do conteúdo."),
-                                    
-                                    PassoGuia(imagem: "Passivo", titulo: "Estudo Passivo", descricao: "Acontece quando você apenas absorve a informação, sem interagir com ela. É o caso de assistir a aulas ou ler livros. O cérebro faz pouco esforço, o que facilita o esquecimento."),
-                                    
-                                    PassoGuia(imagem: "Passiv", titulo: "Estudo Passivo", descricao: "Acontece quando você apenas absorve a informação, sem interagir com ela. É o caso de assistir a aulas ou ler livros. O cérebro faz pouco esforço, o que facilita o esquecimento.")
+                                    PassoGuia(imagem: "1.circle.fill", titulo: "Passo 1: Escolha o tema", descricao: "Escreva tudo o que você já sabe sobre o assunto em uma folha de papel em branco.")
                                 ]
                             )
                         } label: {
@@ -74,13 +70,12 @@ struct MetodosEstudoAtivo: View {
                                     .scaledToFill()
                                     .frame(width: 60, height: 60)
                                     .clipped()
-                                    .clipShape(RoundedRectangle(cornerRadius: 10))
                                 
                                 VStack(alignment: .leading, spacing: 4) {
-                                    Text("Estudo Ativo vs Passivo")
+                                    Text("Planejamento de tarefas")
                                         .font(.headline)
                                         .foregroundColor(.primary)
-                                    Text("Duas técnicas que se diferenciam pelo...")
+                                    Text("Defina suas metas diárias e concentre...")
                                         .font(.subheadline)
                                         .foregroundColor(.secondary)
                                         .multilineTextAlignment(.leading)
@@ -96,7 +91,7 @@ struct MetodosEstudoAtivo: View {
                             DetalhePaginasGuias(
                                 titulo: "Flashcards",
                                 passos: [
-                                    PassoGuia(imagem: "questionmark.bubble.fill", titulo: "Flashcards", descricao: "Coloque uma pergunta direta que force a sua recordação ativa.")
+                                    PassoGuia(imagem: "questionmark.bubble.fill", titulo: "Frente do Card", descricao: "Coloque uma pergunta direta que force a sua recordação ativa.")
                                 ]
                             )
                         } label: {
@@ -106,14 +101,13 @@ struct MetodosEstudoAtivo: View {
                                     .scaledToFill()
                                     .frame(width: 60, height: 60)
                                     .clipped()
-                                    .clipShape(RoundedRectangle(cornerRadius: 10))
                                 
                                 
                                 VStack(alignment: .leading, spacing: 4) {
-                                    Text("Flashcards")
+                                    Text("Foco")
                                         .font(.headline)
                                         .foregroundColor(.primary)
-                                    Text("Pequenos cartões que usam o sistema...")
+                                    Text("Use técnicas como blocos de tempos...")
                                         .font(.subheadline)
                                         .foregroundColor(.secondary)
                                         .multilineTextAlignment(.leading)
@@ -137,13 +131,12 @@ struct MetodosEstudoAtivo: View {
                                     .scaledToFill()
                                     .frame(width: 60, height: 60)
                                     .clipped()
-                                    .clipShape(RoundedRectangle(cornerRadius: 10))
                                 
                                 VStack(alignment: .leading, spacing: 4) {
-                                    Text("Mapas Mentais")
+                                    Text("Descanso")
                                         .font(.headline)
                                         .foregroundColor(.primary)
-                                    Text("Técnica de estudo e organização que...")
+                                    Text("Lembrar de que pausas regulares evit...")
                                         .font(.subheadline)
                                         .foregroundColor(.secondary)
                                         .multilineTextAlignment(.leading)
@@ -153,44 +146,7 @@ struct MetodosEstudoAtivo: View {
                         }
                         
                         Divider()
-                        
-                        //Item 4
-                        NavigationLink {
-                            DetalhePaginasGuias(
-                                titulo: "Técnica Feynman",
-                                passos: [
-                                    PassoGuia(imagem: "1.circle.fill", titulo: "Passo 1: Escolha o tema", descricao: "Escreva tudo o que você já sabe sobre o assunto em uma folha de papel em branco.")
-                                ]
-                            )
-                        } label: {
-                            HStack(spacing: 12) {
-                                Image("Simulados")
-                                    .resizable()
-                                    .scaledToFill()
-                                    .frame(width: 60, height: 60)
-                                    .clipped()
-                                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                                
-                                VStack(alignment: .leading, spacing: 4) {
-                                    Text("Resolução de Questões e Simula...")
-                                        .font(.headline)
-                                        .foregroundColor(.primary)
-                                    Text("A resolução de questões e simulados...")
-                                        .font(.subheadline)
-                                        .foregroundColor(.secondary)
-                                        .multilineTextAlignment(.leading)
-                                }
-                                Spacer()
-                            }
-                        }
-                        
-                        Divider()
-                        
-                        
-                        
-                        
-                        
-                        
+                       
                         
                     }
                     .padding(.horizontal)
@@ -205,6 +161,7 @@ struct MetodosEstudoAtivo: View {
 
 #Preview {
     NavigationStack {
-        MetodosEstudoAtivo()
+        TempoQualidade()
     }
 }
+

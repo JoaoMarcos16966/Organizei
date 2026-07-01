@@ -38,6 +38,7 @@ struct Produtividade: View {
                             Spacer()
                         }
                         Spacer()
+                        Spacer()
                         
                         
                         Text("Produtividade")

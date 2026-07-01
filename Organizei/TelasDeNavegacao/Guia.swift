@@ -61,11 +61,13 @@ struct Guia: View {
 
                     //Tempo de qualidade
                     NavigationLink {
-                        Text("Tempo de Qualidade")
+                        TempoQualidade()
                         
                     } label: {
                         HStack(spacing: 12) {
                             Image(systemName: "clock.arrow.trianglehead.counterclockwise.rotate.90")
+                                .foregroundStyle(.green)
+
                             
                             Text("Tempo de Qualidade")
                         }
@@ -73,23 +75,25 @@ struct Guia: View {
 
                     //Higiene do Sono
                     NavigationLink {
-                        Text("Higiene do Sono")
-                        
+                        HigieneSono()
                     } label: {
                         HStack(spacing: 12) {
                             Image(systemName: "powersleep")
-                            
+                                .foregroundStyle(.primary)
+
                             Text("Higiene do Sono")
                         }
                     }
 
                     //Inteligencia Emocional
                     NavigationLink {
-                        Text("Inteligência Emocional")
+                        InteligenciaEmocional()
                         
                     } label: {
                         HStack(spacing: 12) {
                             Image(systemName: "brain.filled.head.profile")
+                                .foregroundStyle(.purple)
+
                             
                             Text("Inteligência Emocional")
                         }
@@ -98,12 +102,15 @@ struct Guia: View {
                     //Exercícios
                     
                     NavigationLink {
-                        Text("Exercícios Físicos")
+                        Exercicios()
                         
                     } label: {
                         HStack(spacing: 12) {
                             Image(systemName: "figure.run")
+                                .foregroundStyle(.orange)
+
                             Text("Exercícios Físicos")
+                            
                         }
                     }
                     

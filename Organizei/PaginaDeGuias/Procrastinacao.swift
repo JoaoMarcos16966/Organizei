@@ -39,6 +39,7 @@ struct Procrastinacao: View {
                             Spacer()
                         }
                         Spacer()
+                        Spacer()
                         
                         
                         Text("Procrastinação")
