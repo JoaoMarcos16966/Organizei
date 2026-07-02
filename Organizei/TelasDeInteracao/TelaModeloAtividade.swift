@@ -8,11 +8,18 @@
 import SwiftUI
 
 struct TelaModeloAtividade: View {
+    var concluido: Bool = false
+    @Binding var atividade: Atividade
+    
     var body: some View {
 
         ZStack(alignment: .leading) {
             Rectangle()
-                .fill(Color(red: 187/255, green: 176/255, blue: 255/255)) // alterar para Atividade.prioridade.cor
+                .fill(Color(
+                    red: Double(atividade.prioridade.cores[0]) / 255.0,
+                    green: Double(atividade.prioridade.cores[1]) / 255.0,
+                    blue: Double(atividade.prioridade.cores[2]) / 255.0
+                )) // alterar para Atividade.prioridade.cor
                 .frame(width: 345, height: 96)
                 .cornerRadius(10)
                 .overlay(
@@ -23,14 +30,14 @@ struct TelaModeloAtividade: View {
                                 .frame(width: 77, height: 77)
                                 .cornerRadius(10)
 
-                            Image(systemName: "pencil") // alterar para Atividade.icone
+                            Image(systemName: "\(atividade.icone)") // alterar para Atividade.icone
                                 .font(.largeTitle)
                             
                         }
                         .padding(10)
                         
                         VStack {
-                            Text("Estudar")
+                            Text("\(atividade.nome)")
                                 .font(.title3)
                                 .frame(width: 118 ,  alignment: .leading)
                             
@@ -58,7 +65,10 @@ struct TelaModeloAtividade: View {
                             //MARK: Colocar aqui acao de cicar no botao
                         } label: {
                             Circle()
+                                .foregroundColor(Color.white)
+                                .glassEffect()
                                 .frame(width: 30, height: 30)
+                                .opacity(0.4)
                                 .padding()
                         }
 
@@ -77,5 +87,5 @@ struct TelaModeloAtividade: View {
 }
 
 #Preview {
-    TelaModeloAtividade()
+    TelaModeloAtividade(atividade: .constant(Atividade(nome: "Estudar Circuitos", icone: "pencil", dias: [], prioridade: Prioridade(nome: "Não urgente e importante"))))
 }

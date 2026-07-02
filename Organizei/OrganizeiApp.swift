@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct OrganizeiApp: App {
@@ -13,5 +14,9 @@ struct OrganizeiApp: App {
         WindowGroup {
             TelaInicial()
         }
+        .modelContainer(for:
+                            [Atividade.self,
+                             Prioridade.self]
+        )
     }
 }
