@@ -1,5 +1,5 @@
 {
-  "originHash" : "c75f01edceb4e35c55efd13bedf46d269e0103477e6728ff8c02b73cbfeee75d",
+  "originHash" : "71cffebd395d2ec15d291efb7911411b263a4de4cfdc8b574feca2eef7ef4d6a",
   "pins" : [
     {
       "identity" : "hdatepicker_for_pt-br_calendar",
@@ -8,6 +8,15 @@
       "state" : {
         "branch" : "main",
         "revision" : "f4ee23a6f16da194e5d0b766e46acd8fc80565db"
+      }
+    },
+    {
+      "identity" : "mcemojipicker",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/izyumkin/MCEmojiPicker.git",
+      "state" : {
+        "revision" : "e5b3ed359b04370287366a7c15ffa7013cdd4eec",
+        "version" : "1.2.5"
       }
     }
   ],

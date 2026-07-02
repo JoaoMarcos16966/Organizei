@@ -154,8 +154,8 @@ struct Pomodoro: View {
                     
                     actionButton(
                         title: isRunning ? "Pausar" : "Iniciar",
-                        bg: orangeStyle ? .orange.opacity(0.15) : .blue.opacity(0.15),
-                        fg: orangeStyle ? .orange : .blue,
+                        bg: orangeStyle ? .blue.opacity(0.15) : .blue.opacity(0.15),
+                        fg: orangeStyle ? .blue : .blue,
                         disabled: false,
                         action: manager.toggle
                     )

@@ -119,7 +119,7 @@ struct Guia: View {
                     
                 }
             }
-            .navigationTitle("Guia do Estudante")
+            .navigationTitle("Guia de Organização")
             .listStyle(.insetGrouped)
             
             .scrollContentBackground(.hidden)
