@@ -1,0 +1,15 @@
+{
+  "originHash" : "c75f01edceb4e35c55efd13bedf46d269e0103477e6728ff8c02b73cbfeee75d",
+  "pins" : [
+    {
+      "identity" : "hdatepicker_for_pt-br_calendar",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/joao-vmoraes/HDatePicker_for_Pt-BR_Calendar",
+      "state" : {
+        "branch" : "main",
+        "revision" : "f4ee23a6f16da194e5d0b766e46acd8fc80565db"
+      }
+    }
+  ],
+  "version" : 3
+}
