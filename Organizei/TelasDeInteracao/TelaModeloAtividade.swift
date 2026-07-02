@@ -87,5 +87,5 @@ struct TelaModeloAtividade: View {
 }
 
 #Preview {
-    TelaModeloAtividade(atividade: .constant(Atividade(nome: "Estudar Circuitos", icone: "pencil", dias: [], prioridade: Prioridade(nome: "Não urgente e importante"))))
+    TelaModeloAtividade(atividade: .constant(Atividade(nome: "Estudar Circuitos", icone: "pencil", dias: [], prioridade: Prioridade(nome: "Urgente e importante"))))
 }
