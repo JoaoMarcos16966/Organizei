@@ -12,6 +12,7 @@ import SwiftData
 struct TelaNovaAtividade: View {
     
     @Environment(\.modelContext) private var modelContext
+    @Environment(\.dismiss) private var dismiss
     
     @State private var nome: String = ""
     @State private var dias = Date()
@@ -131,6 +132,7 @@ struct TelaNovaAtividade: View {
                         
                         salvarAtividade = true
                         mostrarNovaAtividade = false
+                        dismiss()
                         
                     } label: {
                         Image(systemName: "arrow.up")
