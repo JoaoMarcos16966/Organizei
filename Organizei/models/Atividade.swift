@@ -6,14 +6,16 @@
 //
 
 import Foundation
+import SwiftData
 
+@Model
 class Atividade {
-    var nome: String = ""
-    var icone: String = ""
-    var dias: [Date] = []
-    var prioridade: String = ""
+    var nome: String 
+    var icone: String
+    var dias: [Date]
+    var prioridade: Prioridade
     
-    init(nome: String, icone: String, dias: [Date], prioridade: String) {
+    init(nome: String, icone: String, dias: [Date], prioridade: Prioridade) {
         self.nome = nome
         self.icone = icone
         self.dias = dias
