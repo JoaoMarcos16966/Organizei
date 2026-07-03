@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct OrganizeiApp: App {
     var body: some Scene {
         WindowGroup {
-            TelaInicial()
+            TABView()
         }
+        .modelContainer(for: AtividadeModel.self)
     }
 }

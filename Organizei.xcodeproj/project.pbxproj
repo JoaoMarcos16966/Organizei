@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1720FBA72FF69A6A002F518F /* MCEmojiPicker in Frameworks */ = {isa = PBXBuildFile; productRef = 1720FBA62FF69A6A002F518F /* MCEmojiPicker */; };
 		CEE76AA72FF5C61B0021E5A3 /* HDatePicker in Frameworks */ = {isa = PBXBuildFile; productRef = CEE76AA62FF5C61B0021E5A3 /* HDatePicker */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEE76AA72FF5C61B0021E5A3 /* HDatePicker in Frameworks */,
+				1720FBA72FF69A6A002F518F /* MCEmojiPicker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +73,7 @@
 			name = Organizei;
 			packageProductDependencies = (
 				CEE76AA62FF5C61B0021E5A3 /* HDatePicker */,
+				1720FBA62FF69A6A002F518F /* MCEmojiPicker */,
 			);
 			productName = Organizei;
 			productReference = 17096F8E2FED5BDB0099B42B /* Organizei.app */;
@@ -102,6 +105,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				CECA36482FF5C29000C5886B /* XCRemoteSwiftPackageReference "HDatePicker_for_Pt-BR_Calendar" */,
+				1720FBA52FF69A6A002F518F /* XCRemoteSwiftPackageReference "MCEmojiPicker" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 17096F8F2FED5BDB0099B42B /* Products */;
@@ -262,7 +266,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8DZGCRL35K;
+				DEVELOPMENT_TEAM = DT5DW5W66L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -294,7 +298,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8DZGCRL35K;
+				DEVELOPMENT_TEAM = DT5DW5W66L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -343,6 +347,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		1720FBA52FF69A6A002F518F /* XCRemoteSwiftPackageReference "MCEmojiPicker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/izyumkin/MCEmojiPicker.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.5;
+			};
+		};
 		CECA36482FF5C29000C5886B /* XCRemoteSwiftPackageReference "HDatePicker_for_Pt-BR_Calendar" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/joao-vmoraes/HDatePicker_for_Pt-BR_Calendar";
@@ -354,6 +366,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		1720FBA62FF69A6A002F518F /* MCEmojiPicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1720FBA52FF69A6A002F518F /* XCRemoteSwiftPackageReference "MCEmojiPicker" */;
+			productName = MCEmojiPicker;
+		};
 		CEE76AA62FF5C61B0021E5A3 /* HDatePicker */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CECA36482FF5C29000C5886B /* XCRemoteSwiftPackageReference "HDatePicker_for_Pt-BR_Calendar" */;
