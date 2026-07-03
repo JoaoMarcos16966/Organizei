@@ -67,6 +67,8 @@ struct TelaVisualizarAtividade: View {
     }
 }
 
+
+//Preview para testar
 #Preview {
     let config = ModelConfiguration(isStoredInMemoryOnly: true)
     let container = try! ModelContainer(for: AtividadeModel.self, configurations: config)
