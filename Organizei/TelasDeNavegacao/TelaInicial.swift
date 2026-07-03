@@ -10,7 +10,9 @@ import SwiftUI
 
 struct TelaInicial: View {
     @State var selectedDay: Date = .now
-
+  
+    @State private var mostrarNovaAtividade: Bool = false
+    
     var body: some View {
         @State var TituloDaNavegacao: String =
             Calendar.current.isDate(Date.now, inSameDayAs: selectedDay)
@@ -27,13 +29,18 @@ struct TelaInicial: View {
 
                     .toolbar {
                         ToolbarItem(placement: .topBarTrailing) {
-                            NavigationLink {
-                                //adicionar aqui sheet para adicionar uma nova atividade
-                            } label: {
-                                Image(systemName: "plus")
-                            }
+                            Button {
+                            mostrarNovaAtividade = true
+                                } label: {
+                            Image(systemName: "plus")
+                                }
                         }
                     }
+                //Sheet para mostrar a tela de nova atividade
+                    .sheet(isPresented: $mostrarNovaAtividade) {
+                        TelaNovaAtividade(mostrarNovaAtividade: $mostrarNovaAtividade)
+                                }
+                
             }
 
         }

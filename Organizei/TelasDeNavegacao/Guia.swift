@@ -20,7 +20,8 @@ struct Guia: View {
                     
                     //Estudo Ativo
                     NavigationLink {
-                        MetodosEstudoAtivo()
+                        ListaAtividades()
+//                        MetodosEstudoAtivo()
                     } label: {
                         HStack(spacing: 12) {
                             Image(systemName: "book.closed")
@@ -119,7 +120,7 @@ struct Guia: View {
                     
                 }
             }
-            .navigationTitle("Guia do Estudante")
+            .navigationTitle("Guia de Organização")
             .listStyle(.insetGrouped)
             
             .scrollContentBackground(.hidden)

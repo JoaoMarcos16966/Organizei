@@ -84,6 +84,10 @@ final class TimeManager {
         timer?.invalidate()
         timer = nil
     }
+    
+    
+    
+    
 }
 
 struct Pomodoro: View {
@@ -91,19 +95,18 @@ struct Pomodoro: View {
     
     var body: some View {
         ZStack {
-            Color.white.ignoresSafeArea()
-            
+            Color(.systemBackground).ignoresSafeArea()
+
             VStack(spacing: 0) {
-                Picker("Modo", selection: $manager.mode) {
-                    Text("Livre").tag(TimerMode.free)
-                    Text("Pomodoro").tag(TimerMode.pomodoro)
-                    Text("Timer").tag(TimerMode.countdown)
+                HStack(spacing: 0) {
+                    modeButton("Livre", .free)
+                    modeButton("Pomodoro", .pomodoro)
+                    modeButton("Timer", .countdown)
                 }
-                .pickerStyle(.segmented)
                 .padding(.horizontal, 32)
                 .padding(.top, 20)
                 .disabled(manager.state != .idle)
-                .opacity(manager.state == .idle ? 1.0 : 0.3)
+                .opacity(manager.state == .idle ? 1.0 : 0)
                 
                 Spacer()
                 
@@ -131,7 +134,7 @@ struct Pomodoro: View {
                         
                         Text(manager.timeString)
                             .font(.system(size: 54, weight: .light, design: .monospaced))
-                            .foregroundColor(.orange)
+                            .foregroundColor(.primary)
                     }
                     .frame(width: 280, height: 280)
                 }
@@ -141,8 +144,8 @@ struct Pomodoro: View {
                 HStack {
                     actionButton(
                         title: manager.state == .paused ? "Cancelar" : "Voltar",
-                        bg: manager.state == .idle ? .orange.opacity(0.20) : .black.opacity(0.15),
-                        fg: manager.state == .idle ? .orange : .black,
+                        bg: manager.state == .idle ? .orange.opacity(0.25) : .orange.opacity(0.25),
+                        fg: manager.state == .idle ? .orange : .orange,
                         disabled: manager.state == .idle,
                         action: manager.reset
                     )
@@ -154,8 +157,8 @@ struct Pomodoro: View {
                     
                     actionButton(
                         title: isRunning ? "Pausar" : "Iniciar",
-                        bg: orangeStyle ? .orange.opacity(0.15) : .blue.opacity(0.15),
-                        fg: orangeStyle ? .orange : .blue,
+                        bg: orangeStyle ? .blue.opacity(0.25) : .blue.opacity(0.25),
+                        fg: orangeStyle ? .blue : .blue,
                         disabled: false,
                         action: manager.toggle
                     )
@@ -165,6 +168,28 @@ struct Pomodoro: View {
             }
         }
     }
+    
+    private func modeButton(_ title: String, _ mode: TimerMode) -> some View {
+        Button {
+            manager.mode = mode
+        } label: {
+            Text(title)
+                .font(.headline)
+                .fontWeight(.semibold)
+                .foregroundColor(manager.mode == mode ? .white : .gray)
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 12)
+                .background(
+                    manager.mode == mode
+                    ? Color.primary.opacity(0.45)
+                    : Color.primary.opacity(0.15)
+                )
+                .clipShape(Capsule())
+        }
+    }
+
+    
+    
     
     private func wheel(title: String, range: ClosedRange<Int>, selection: Binding<Int>) -> some View {
         HStack(spacing: 0) {
@@ -177,12 +202,14 @@ struct Pomodoro: View {
                 }
             }
             .pickerStyle(.wheel)
-            .environment(\.colorScheme, .light) // Mudado para light para os números aparecerem no fundo branco
+//            .environment(\.colorScheme, .light) (removi pq isso fazia a cor dos numeros ficar preto mesmo em fundo preto
             
             Text(title)
                 .font(.footnote)
                 .fontWeight(.bold)
-                .foregroundColor(.black.opacity(0.6)) // Corrigido para dar leitura sobre o fundo branco
+                .foregroundStyle(.primary)
+
+            // Corrigido para dar leitura sobre o fundo branco
                 .padding(.trailing, 4)
         }
     }

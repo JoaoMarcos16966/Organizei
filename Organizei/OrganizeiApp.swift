@@ -12,11 +12,8 @@ import SwiftData
 struct OrganizeiApp: App {
     var body: some Scene {
         WindowGroup {
-            TelaInicial()
+            TABView()
         }
-        .modelContainer(for:
-                            [Atividade.self,
-                             Prioridade.self]
-        )
+        .modelContainer(for: AtividadeModel.self)
     }
 }
