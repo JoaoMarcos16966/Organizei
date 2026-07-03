@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TelaModeloAtividade: View {
     var concluido: Bool = false
-    @Binding var atividade: Atividade
+    @Binding var atividade: AtividadeModel
     
     var body: some View {
 
@@ -87,5 +87,5 @@ struct TelaModeloAtividade: View {
 }
 
 #Preview {
-    TelaModeloAtividade(atividade: .constant(Atividade(nome: "Estudar Circuitos", icone: "pencil", dias: [], prioridade: Prioridade(nome: "Urgente e importante"))))
+    TelaModeloAtividade(atividade: .constant(AtividadeModel(nome: "estudar", data: .now, horaInicio: .now, horaTermino: .now, repetirAtividade: false, frequenciaRepeticao: "Diario", prioridade: Prioridade(nome: "Urgente e importante"), icone: "pencil")))
 }

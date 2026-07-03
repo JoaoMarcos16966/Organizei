@@ -120,9 +120,11 @@ struct TelaNovaAtividade: View {
                             horaTermino: horaTermino,
                             repetirAtividade: repetirAtividade,
                             frequenciaRepeticao: repetirAtividade ? frequenciaRepeticao : "Não se repete",
-                            prioridade: prioridade,
+                            prioridade: Prioridade(nome: prioridade),
                             icone: icone
                         )
+                        
+                        print(nome,icone,  dias, horaInicio, horaTermino, repetirAtividade, frequenciaRepeticao, prioridade)
                         
                         // Insere no banco de dados local
                         modelContext.insert(novaAtividade)

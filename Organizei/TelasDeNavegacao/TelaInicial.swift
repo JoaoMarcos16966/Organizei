@@ -13,6 +13,10 @@ struct TelaInicial: View {
   
     @State private var mostrarNovaAtividade: Bool = false
     
+    //query var conulta:[atividades]
+    
+        //var ativddsFiltradas = conulta..filter: [para cada intem se [itens].date == selectday
+    
     var body: some View {
         @State var TituloDaNavegacao: String =
             Calendar.current.isDate(Date.now, inSameDayAs: selectedDay)

@@ -1,24 +1,34 @@
 //
-//  File.swift
+//  AtividadeSwiftData.swift
 //  Organizei
 //
-//  Created by João vitor moraes de andrade on 26/06/26.
+//  Created by João Marcos Pimentel Nascimento de Lima  on 02/07/26.
 //
 
 import Foundation
 import SwiftData
 
 @Model
-class Atividade {
-    var nome: String 
-    var icone: String
-    var dias: [Date]
+class AtividadeModel {
+    var id: UUID
+    var nome: String
+    var data: Date
+    var horaInicio: Date
+    var horaTermino: Date
+    var repetirAtividade: Bool
+    var frequenciaRepeticao: String
     var prioridade: Prioridade
+    var icone: String
     
-    init(nome: String, icone: String, dias: [Date], prioridade: Prioridade) {
+    init(nome: String, data: Date, horaInicio: Date, horaTermino: Date, repetirAtividade: Bool, frequenciaRepeticao: String, prioridade: Prioridade, icone: String) {
+        self.id = UUID()
         self.nome = nome
-        self.icone = icone
-        self.dias = dias
+        self.data = data
+        self.horaInicio = horaInicio
+        self.horaTermino = horaTermino
+        self.repetirAtividade = repetirAtividade
+        self.frequenciaRepeticao = frequenciaRepeticao
         self.prioridade = prioridade
+        self.icone = icone
     }
 }
