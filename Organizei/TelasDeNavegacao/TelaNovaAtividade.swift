@@ -7,9 +7,12 @@
 
 import SwiftUI
 import MCEmojiPicker
-
+import SwiftData
 
 struct TelaNovaAtividade: View {
+    
+    @Environment(\.modelContext) private var modelContext
+    
     @State private var nome: String = ""
     @State private var dias = Date()
     
@@ -28,7 +31,7 @@ struct TelaNovaAtividade: View {
     @State private var frequenciaRepeticao: String = "Diariamente"
     let opcoesRepeticao = ["Diariamente", "Semanalmente", "Mensalmente", "Anualmente"]
     
-
+    
     @State private var icone: String = "📖"
     @State private var mostrarEmojiPicker: Bool = false
     
@@ -41,7 +44,7 @@ struct TelaNovaAtividade: View {
                         HStack {
                             Spacer()
                             VStack(spacing: 4) {
-                
+                                
                                 Button {
                                     mostrarEmojiPicker.toggle()
                                 } label: {
@@ -108,6 +111,22 @@ struct TelaNovaAtividade: View {
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
+                        guard !nome.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return }
+                        
+                        let novaAtividade = AtividadeModel(
+                            nome: nome,
+                            data: dias,
+                            horaInicio: horaInicio,
+                            horaTermino: horaTermino,
+                            repetirAtividade: repetirAtividade,
+                            frequenciaRepeticao: repetirAtividade ? frequenciaRepeticao : "Não se repete",
+                            prioridade: prioridade,
+                            icone: icone
+                        )
+                        
+                        // Insere no banco de dados local
+                        modelContext.insert(novaAtividade)
+                        
                         salvarAtividade = true
                         mostrarNovaAtividade = false
                         
