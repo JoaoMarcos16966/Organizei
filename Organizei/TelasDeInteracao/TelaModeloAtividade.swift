@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TelaModeloAtividade: View {
     var concluido: Bool = false
-    @Binding var atividade: AtividadeModel
+    var atividade: AtividadeModel
     
     var body: some View {
 
@@ -30,7 +30,7 @@ struct TelaModeloAtividade: View {
                                 .frame(width: 77, height: 77)
                                 .cornerRadius(10)
 
-                            Image(systemName: "\(atividade.icone)") // alterar para Atividade.icone
+                            Text(atividade.icone) // alterar para Atividade.icone
                                 .font(.largeTitle)
                             
                         }
@@ -41,14 +41,14 @@ struct TelaModeloAtividade: View {
                                 .font(.title3)
                                 .frame(width: 118 ,  alignment: .leading)
                             
-                            Text("Seg, Ter, Qua...")
+                            Text("\(atividade.frequenciaRepeticao)")
                                 .font(.caption2)
                                 .foregroundStyle(Color.black)
                                 .opacity(0.4)
                                 .multilineTextAlignment(.leading)
                                 .frame(width: 118 , alignment: .leading)
                             
-                            Text("7:30 - 11:30")
+                            Text("\(atividade.horaInicio, format: .dateTime.hour().minute()) - \(atividade.horaTermino, format: .dateTime.hour().minute())")
                                 .font(.caption2)
                                 .foregroundStyle(Color.black)
                                 .multilineTextAlignment(.leading)
@@ -87,5 +87,5 @@ struct TelaModeloAtividade: View {
 }
 
 #Preview {
-    TelaModeloAtividade(atividade: .constant(AtividadeModel(nome: "estudar", data: .now, horaInicio: .now, horaTermino: .now, repetirAtividade: false, frequenciaRepeticao: "Diario", prioridade: Prioridade(nome: "Urgente e importante"), icone: "pencil")))
+    TelaModeloAtividade(atividade: AtividadeModel(nome: "estudar", data: .now, horaInicio: .now, horaTermino: .now, repetirAtividade: false, frequenciaRepeticao: "Diario", prioridade: Prioridade(nome: "Urgente e importante"), icone: "pencil"))
 }
