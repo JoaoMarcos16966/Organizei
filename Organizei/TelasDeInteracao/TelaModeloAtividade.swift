@@ -7,74 +7,142 @@
 
 import SwiftUI
 
+
 struct TelaModeloAtividade: View {
-    var concluido: Bool = false
+    @State var concluido: Bool = false
     var atividade: AtividadeModel
+    
+    func marcar() {
+        concluido.toggle()
+    }
     
     var body: some View {
 
         ZStack(alignment: .leading) {
-            Rectangle()
-                .fill(Color(
-                    red: Double(atividade.prioridade.cores[0]) / 255.0,
-                    green: Double(atividade.prioridade.cores[1]) / 255.0,
-                    blue: Double(atividade.prioridade.cores[2]) / 255.0
-                )) // alterar para Atividade.prioridade.cor
-                .frame(width: 345, height: 96)
-                .cornerRadius(10)
-                .overlay(
-                    HStack {
-                        ZStack {
-                            Rectangle()
-                                .fill(Color.white)
-                                .frame(width: 77, height: 77)
-                                .cornerRadius(10)
-
-                            Text(atividade.icone) // alterar para Atividade.icone
-                                .font(.largeTitle)
+                if !concluido{
+                    Rectangle()
+                    .fill(Color(
+                        red: Double(atividade.prioridade.cores[0]) / 255.0,
+                        green: Double(atividade.prioridade.cores[1]) / 255.0,
+                        blue: Double(atividade.prioridade.cores[2]) / 255.0
+                    )) // alterar para Atividade.prioridade.cor
+                    .frame(width: 345, height: 96)
+                    .cornerRadius(10)
+                    .overlay(
+                        HStack {
+                            ZStack {
+                                Rectangle()
+                                    .fill(Color.white)
+                                    .frame(width: 77, height: 77)
+                                    .cornerRadius(10)
+                                
+                                Text(atividade.icone) // alterar para Atividade.icone
+                                    .font(.largeTitle)
+                                
+                            }
+                            .padding(10)
                             
-                        }
-                        .padding(10)
-                        
-                        VStack {
-                            Text("\(atividade.nome)")
-                                .font(.title3)
-                                .frame(width: 118 ,  alignment: .leading)
-                            
-                            Text("\(atividade.frequenciaRepeticao)")
-                                .font(.caption2)
-                                .foregroundStyle(Color.black)
-                                .opacity(0.4)
-                                .multilineTextAlignment(.leading)
-                                .frame(width: 118 , alignment: .leading)
-                            
-                            Text("\(atividade.horaInicio, format: .dateTime.hour().minute()) - \(atividade.horaTermino, format: .dateTime.hour().minute())")
-                                .font(.caption2)
-                                .foregroundStyle(Color.black)
-                                .multilineTextAlignment(.leading)
-                                .frame(width: 118 , height: 5, alignment: .leading)
-                            
-                                }
+                            VStack {
+                                Text("\(atividade.nome)")
+                                    .font(.title3)
+                                    .frame(width: 118 ,  alignment: .leading)
+                                
+                                Text("\(atividade.frequenciaRepeticao)")
+                                    .font(.caption2)
+                                    .foregroundStyle(Color.black)
+                                    .opacity(0.4)
+                                    .multilineTextAlignment(.leading)
+                                    .frame(width: 118 , alignment: .leading)
+                                
+                                Text("\(atividade.horaInicio, format: .dateTime.hour().minute()) - \(atividade.horaTermino, format: .dateTime.hour().minute())")
+                                    .font(.caption2)
+                                    .foregroundStyle(Color.black)
+                                    .multilineTextAlignment(.leading)
+                                    .frame(width: 118 , height: 5, alignment: .leading)
+                                
+                            }
                             .frame(width: 168 ,  alignment: .leading)
-                        
-                    Spacer()
-                        
-                        Button {
-                            print("botao de concluir atividade foi apertado")
                             
-                            //MARK: Colocar aqui acao de cicar no botao
-                        } label: {
-                            Circle()
-                                .foregroundColor(Color.white)
-                                .glassEffect()
-                                .frame(width: 30, height: 30)
-                                .opacity(0.4)
-                                .padding()
+                            Spacer()
+                            
+                            Button {
+                                print("botao de concluir atividade foi apertado")
+                                
+                                //MARK: Colocar aqui acao de cicar no botao
+                                marcar()
+                            } label: {
+                                Circle()
+                                    .foregroundColor(Color.white)
+                                    .glassEffect()
+                                    .frame(width: 30, height: 30)
+                                    .opacity(0.4)
+                                    .padding()
+                            }
+                            
+                            
                         }
-
-                        
-                    }
-                )
+                    )
+                } else {
+                    Rectangle()
+                        .fill(.gray) // alterar para Atividade.prioridade.cor
+                    .frame(width: 345, height: 96)
+                    .cornerRadius(10)
+                    .overlay(
+                        HStack {
+                            ZStack {
+                                Rectangle()
+                                    .fill(Color.white)
+                                    .frame(width: 77, height: 77)
+                                    .cornerRadius(10)
+                                
+                                Text(atividade.icone) // alterar para Atividade.icone
+                                    .font(.largeTitle)
+                                
+                            }
+                            .padding(10)
+                            
+                            VStack {
+                                Text("\(atividade.nome)")
+                                    .font(.title3)
+                                    .frame(width: 118 ,  alignment: .leading)
+                                
+                                Text("\(atividade.frequenciaRepeticao)")
+                                    .font(.caption2)
+                                    .foregroundStyle(Color.black)
+                                    .opacity(0.4)
+                                    .multilineTextAlignment(.leading)
+                                    .frame(width: 118 , alignment: .leading)
+                                
+                                Text("\(atividade.horaInicio, format: .dateTime.hour().minute()) - \(atividade.horaTermino, format: .dateTime.hour().minute())")
+                                    .font(.caption2)
+                                    .foregroundStyle(Color.black)
+                                    .multilineTextAlignment(.leading)
+                                    .frame(width: 118 , height: 5, alignment: .leading)
+                                
+                            }
+                            .frame(width: 168 ,  alignment: .leading)
+                            
+                            Spacer()
+                            
+                            Button {
+                                print("botao de concluir atividade foi apertado")
+                                
+                                //MARK: Colocar aqui acao de cicar no botao
+                                marcar()
+                            } label: {
+                                Image(systemName: "checkmark.circle.fill")
+                                    .foregroundColor(Color.green)
+                                    .font(.title)
+                                    .glassEffect()
+                                    .frame(width: 30, height: 30)
+                                    .opacity(0.8)
+                                    .padding()
+                            }
+                            
+                            
+                        }
+                    )
+                }
             
             
         }
