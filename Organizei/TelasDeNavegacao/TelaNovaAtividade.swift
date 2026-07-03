@@ -18,7 +18,7 @@ struct TelaNovaAtividade: View {
     @State private var dias = Date()
     
     @State private var horaInicio = Date()
-    @State private var horaTermino = Date()
+    @State private var horaTermino = Date() + 3600
     
     @State private var salvarAtividade: Bool = false
     
