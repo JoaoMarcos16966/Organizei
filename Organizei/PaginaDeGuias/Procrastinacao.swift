@@ -55,48 +55,17 @@ struct Procrastinacao: View {
                     
                     VStack(spacing: 20) {
                         
-                        // Item 1: Feynman
+                        // Item 1: Flashcards
                         NavigationLink {
                             DetalhePaginasGuias(
-                                titulo: "Estudo Ativo vs Passivo",
+                                titulo: "Matriz de Eisenhower",
                                 passos: [
-                                    PassoGuia(imagem: "1.circle.fill", titulo: "Passo 1: Escolha o tema", descricao: "Escreva tudo o que você já sabe sobre o assunto em uma folha de papel em branco.")
+                                    PassoGuia(imagem: "Frame 5", titulo: "Matriz de Eisenhower", descricao: "Coloque prioridades nas suas tarefas, inspirada na matriz. O OrganizEI ajuda você com isso 😉")
                                 ]
                             )
                         } label: {
                             HStack(spacing: 12) {
-                                Image("Estudos")
-                                    .resizable()
-                                    .scaledToFill()
-                                    .frame(width: 60, height: 60)
-                                    .clipped()
-                                
-                                VStack(alignment: .leading, spacing: 4) {
-                                    Text("Elimine Distrações")
-                                        .font(.headline)
-                                        .foregroundColor(.primary)
-                                    Text("Duas técnicas que se diferenciam pelo...")
-                                        .font(.subheadline)
-                                        .foregroundColor(.secondary)
-                                        .multilineTextAlignment(.leading)
-                                }
-                                Spacer()
-                            }
-                        }
-                        
-                        Divider()
-                        
-                        // Item 2: Flashcards
-                        NavigationLink {
-                            DetalhePaginasGuias(
-                                titulo: "Flashcards",
-                                passos: [
-                                    PassoGuia(imagem: "questionmark.bubble.fill", titulo: "Frente do Card", descricao: "Coloque uma pergunta direta que force a sua recordação ativa.")
-                                ]
-                            )
-                        } label: {
-                            HStack(spacing: 12) {
-                                Image("flashcards")
+                                Image("matriz")
                                     .resizable()
                                     .scaledToFill()
                                     .frame(width: 60, height: 60)
@@ -107,7 +76,7 @@ struct Procrastinacao: View {
                                     Text("Matriz de Eisenhower")
                                         .font(.headline)
                                         .foregroundColor(.primary)
-                                    Text("Pequenos cartões que usam o sistema...")
+                                    Text("Uma matriz criada para ajudar a dividir...")
                                         .font(.subheadline)
                                         .foregroundColor(.secondary)
                                         .multilineTextAlignment(.leading)

@@ -14,14 +14,14 @@ struct DetalhePaginasGuias: View {
     var body: some View {
         TabView {
             ForEach(passos) { passo in
-                VStack(spacing: 20) {
+                VStack(spacing: 10) {
 
                     // Exibe a imagem apenas se existir
                     if let imagem = passo.imagem {
                         Image(imagem)
                             .resizable()
                             .scaledToFill()
-                            .frame(width: 280, height: 360)
+                            .frame(width: 230, height: 460)
                             .clipped()
                             .cornerRadius(16)
                     }
@@ -37,7 +37,7 @@ struct DetalhePaginasGuias: View {
                     Text(passo.descricao)
                         .multilineTextAlignment(.center)
                         .foregroundColor(.secondary)
-                        .padding(.horizontal, 24)
+                        .padding(.horizontal, 30)
 
                     Spacer()
                 }

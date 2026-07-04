@@ -45,7 +45,7 @@ struct Exercicios: View {
                         Text("Exercícios Físicos")
                             .font(.title).bold()
                         
-                        Text("É a arte de focar no que traz resultado real, otimizando sua energia e seu tempo!")
+                        Text("São atividades estruturadas que melhoram a saúde mental e física, prevenindo doenças crônicas e fortalecendo o sistema imunológico!")
                             .font(.body)
                             .foregroundColor(.secondary)
                     }
@@ -65,17 +65,17 @@ struct Exercicios: View {
                             )
                         } label: {
                             HStack(spacing: 12) {
-                                Image("Estudos")
+                                Image("exercicios")
                                     .resizable()
                                     .scaledToFill()
                                     .frame(width: 60, height: 60)
                                     .clipped()
                                 
                                 VStack(alignment: .leading, spacing: 4) {
-                                    Text("Planejamento de tarefas")
+                                    Text("Saúde física e mental")
                                         .font(.headline)
                                         .foregroundColor(.primary)
-                                    Text("Defina suas metas diárias e concentre...")
+                                    Text("Liberam endorfinas que reduzem a an...")
                                         .font(.subheadline)
                                         .foregroundColor(.secondary)
                                         .multilineTextAlignment(.leading)
@@ -85,68 +85,6 @@ struct Exercicios: View {
                         }
                         
                         Divider()
-                        
-                        // Item 2: Flashcards
-                        NavigationLink {
-                            DetalhePaginasGuias(
-                                titulo: "Flashcards",
-                                passos: [
-                                    PassoGuia(imagem: "questionmark.bubble.fill", titulo: "Frente do Card", descricao: "Coloque uma pergunta direta que force a sua recordação ativa.")
-                                ]
-                            )
-                        } label: {
-                            HStack(spacing: 12) {
-                                Image("flashcards")
-                                    .resizable()
-                                    .scaledToFill()
-                                    .frame(width: 60, height: 60)
-                                    .clipped()
-                                
-                                
-                                VStack(alignment: .leading, spacing: 4) {
-                                    Text("Foco")
-                                        .font(.headline)
-                                        .foregroundColor(.primary)
-                                    Text("Use técnicas como blocos de tempos...")
-                                        .font(.subheadline)
-                                        .foregroundColor(.secondary)
-                                        .multilineTextAlignment(.leading)
-                                }
-                                Spacer()
-                            }
-                        }
-                        Divider()
-                        //Item 3
-                        NavigationLink {
-                            DetalhePaginasGuias(
-                                titulo: "Técnica Feynman",
-                                passos: [
-                                    PassoGuia(imagem: "1.circle.fill", titulo: "Passo 1: Escolha o tema", descricao: "Escreva tudo o que você já sabe sobre o assunto em uma folha de papel em branco.")
-                                ]
-                            )
-                        } label: {
-                            HStack(spacing: 12) {
-                                Image("MapaMental")
-                                    .resizable()
-                                    .scaledToFill()
-                                    .frame(width: 60, height: 60)
-                                    .clipped()
-                                
-                                VStack(alignment: .leading, spacing: 4) {
-                                    Text("Descanso")
-                                        .font(.headline)
-                                        .foregroundColor(.primary)
-                                    Text("Lembrar de que pausas regulares evit...")
-                                        .font(.subheadline)
-                                        .foregroundColor(.secondary)
-                                        .multilineTextAlignment(.leading)
-                                }
-                                Spacer()
-                            }
-                        }
-                        
-                        Divider()
-                       
                         
                     }
                     .padding(.horizontal)
