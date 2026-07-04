@@ -98,11 +98,12 @@ struct Pomodoro: View {
             Color(.systemBackground).ignoresSafeArea()
 
             VStack(spacing: 0) {
-                HStack(spacing: 0) {
-                    modeButton("Livre", .free)
-                    modeButton("Pomodoro", .pomodoro)
-                    modeButton("Timer", .countdown)
+                Picker("", selection: $manager.mode) {
+                    Text("Livre").tag(TimerMode.free)
+                    Text("Pomodoro").tag(TimerMode.pomodoro)
+                    Text("Timer").tag(TimerMode.countdown)
                 }
+                .pickerStyle(.segmented)
                 .padding(.horizontal, 32)
                 .padding(.top, 20)
                 .disabled(manager.state != .idle)

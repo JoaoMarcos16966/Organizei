@@ -22,9 +22,9 @@ struct TelaVisualizarAtividade: View {
                             Text(atividade.icone)
                                 .font(.system(size: 60))
                                 .frame(width: 120, height: 120)
-                                .background(Color(uiColor: .systemBackground))
+                                .background(.primary.opacity(0.10))
                                 .cornerRadius(16)
-                                .shadow(color: .black.opacity(0.08), radius: 8, x: 0, y: 3)
+                                .shadow(color: .primary.opacity(0.08), radius: 8, x: 0, y: 3)
                         }
                         Spacer()
                     }
