@@ -9,23 +9,46 @@ import SwiftUI
 
 
 struct TelaModeloAtividade: View {
-    @State var concluido: Bool = false
     var atividade: AtividadeModel
+    @Environment(\.colorScheme) private var colorScheme
     
     func marcar() {
-        concluido.toggle()
+        withAnimation(.spring(response: 0.4, dampingFraction: 0.8)) {
+            atividade.concluido.toggle()
+        }
+    }
+    
+    var corPrioridade: Color {
+        switch atividade.prioridade.nome {
+
+        case "Urgente e importante":
+            return colorScheme == .light
+                ? Color(red: 196/255, green: 114/255, blue: 250/255)
+                : Color(red: 120/255, green: 58/255, blue: 170/255)
+
+        case "Urgente e não importante":
+            return colorScheme == .light
+                ? Color(red: 187/255, green: 176/255, blue: 255/255)
+                : Color(red: 103/255, green: 92/255, blue: 170/255)
+
+        case "Não urgente e importante":
+            return colorScheme == .light
+                ? Color(red: 129/255, green: 205/255, blue: 255/255)
+                : Color(red: 50/255, green: 120/255, blue: 180/255)
+
+        default:
+            return colorScheme == .light
+                ? Color(red: 186/255, green: 240/255, blue: 255/255)
+                : Color(red: 90/255, green: 145/255, blue: 170/255)
+        }
     }
     
     var body: some View {
 
         ZStack(alignment: .leading) {
-                if !concluido{
+            if !atividade.concluido{
                     Rectangle()
-                    .fill(Color(
-                        red: Double(atividade.prioridade.cores[0]) / 255.0,
-                        green: Double(atividade.prioridade.cores[1]) / 255.0,
-                        blue: Double(atividade.prioridade.cores[2]) / 255.0
-                    )) // alterar para Atividade.prioridade.cor
+                    .fill(corPrioridade) // alterar para Atividade.prioridade.cor
                     .frame(width: 345, height: 96)
                     .cornerRadius(10)
                     .overlay(
@@ -49,14 +72,15 @@ struct TelaModeloAtividade: View {
                                 
                                 Text("\(atividade.frequenciaRepeticao)")
                                     .font(.caption2)
-                                    .foregroundStyle(Color.black)
-                                    .opacity(0.4)
+                                    .foregroundStyle(Color.primary)
+                                    .opacity(0.5)
                                     .multilineTextAlignment(.leading)
                                     .frame(width: 118 , alignment: .leading)
                                 
                                 Text("\(atividade.horaInicio, format: .dateTime.hour().minute()) - \(atividade.horaTermino, format: .dateTime.hour().minute())")
                                     .font(.caption2)
-                                    .foregroundStyle(Color.black)
+                                    .foregroundStyle(Color.primary)
+                                    .opacity(0.5)
                                     .multilineTextAlignment(.leading)
                                     .frame(width: 118 , height: 5, alignment: .leading)
                                 
@@ -97,6 +121,7 @@ struct TelaModeloAtividade: View {
                                 
                                 Text(atividade.icone) // alterar para Atividade.icone
                                     .font(.largeTitle)
+                                    .opacity(0.4)
                                 
                             }
                             .padding(10)
@@ -104,18 +129,20 @@ struct TelaModeloAtividade: View {
                             VStack {
                                 Text("\(atividade.nome)")
                                     .font(.title3)
+                                    .opacity(0.5)
                                     .frame(width: 118 ,  alignment: .leading)
                                 
                                 Text("\(atividade.frequenciaRepeticao)")
                                     .font(.caption2)
-                                    .foregroundStyle(Color.black)
-                                    .opacity(0.4)
+                                    .foregroundStyle(Color.primary)
+                                    .opacity(0.5)
                                     .multilineTextAlignment(.leading)
                                     .frame(width: 118 , alignment: .leading)
                                 
                                 Text("\(atividade.horaInicio, format: .dateTime.hour().minute()) - \(atividade.horaTermino, format: .dateTime.hour().minute())")
                                     .font(.caption2)
-                                    .foregroundStyle(Color.black)
+                                    .foregroundStyle(Color.primary)
+                                    .opacity(0.5)
                                     .multilineTextAlignment(.leading)
                                     .frame(width: 118 , height: 5, alignment: .leading)
                                 
@@ -155,5 +182,5 @@ struct TelaModeloAtividade: View {
 }
 
 #Preview {
-    TelaModeloAtividade(atividade: AtividadeModel(nome: "estudar", data: .now, horaInicio: .now, horaTermino: .now, repetirAtividade: false, frequenciaRepeticao: "Diario", prioridade: Prioridade(nome: "Urgente e importante"), icone: "pencil"))
+    TelaModeloAtividade(atividade: AtividadeModel(nome: "estudar", data: .now, horaInicio: .now, horaTermino: .now, repetirAtividade: false, frequenciaRepeticao: "Diario", prioridade: Prioridade(nome: "Não urgente e não importante"), icone: "pencil"))
 }
