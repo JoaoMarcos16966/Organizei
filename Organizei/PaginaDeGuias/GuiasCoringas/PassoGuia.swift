@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PassoGuia: Identifiable {
     let id = UUID()
-    let imagem: String      // Nome da foto exatamente como está no Assets
+    let imagem: String?   // Nome da foto exatamente como está no Assets
     let titulo: String      // Título da página interna
     let descricao: String   // Texto explicativo de cada passo
 }

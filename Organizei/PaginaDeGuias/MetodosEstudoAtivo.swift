@@ -64,7 +64,7 @@ struct MetodosEstudoAtivo: View {
                                     
                                     PassoGuia(imagem: "Passivo", titulo: "Estudo Passivo", descricao: "Acontece quando você apenas absorve a informação, sem interagir com ela. É o caso de assistir a aulas ou ler livros. O cérebro faz pouco esforço, o que facilita o esquecimento."),
                                     
-                                    PassoGuia(imagem: "Passiv", titulo: "Estudo Passivo", descricao: "Acontece quando você apenas absorve a informação, sem interagir com ela. É o caso de assistir a aulas ou ler livros. O cérebro faz pouco esforço, o que facilita o esquecimento.")
+                                    PassoGuia(imagem: nil, titulo: "", descricao: "Acontece quando você apenas absorve a informação, sem interagir com ela. É o caso de assistir a aulas ou ler livros. O cérebro faz pouco esforço, o que facilita o esquecimento.")
                                 ]
                             )
                         } label: {

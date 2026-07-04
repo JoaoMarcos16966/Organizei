@@ -10,64 +10,67 @@ import SwiftUI
 struct DetalhePaginasGuias: View {
     let titulo: String
     let passos: [PassoGuia]
-    
+
     var body: some View {
-            VStack {
-                
-                TabView {
-                    ForEach(passos) { passo in
-                        VStack {
-                            
-                            Image(passo.imagem)
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 280, height: 360)
-                                .clipped()
-                                .border(Color.gray, width: 2)
-                                .cornerRadius(16)
-                            
-                            VStack {
-                                Text(passo.titulo)
-                                    .font(.title2).bold()
-                                    .multilineTextAlignment(.center)
-                                    .padding(.horizontal)
-                            }
-                            
-                            Text(passo.descricao)
-                                .multilineTextAlignment(.center)
-                                .foregroundColor(.secondary)
-                                .padding(.horizontal, 20)
-                           
-                        }
+        TabView {
+            ForEach(passos) { passo in
+                VStack(spacing: 20) {
+
+                    // Exibe a imagem apenas se existir
+                    if let imagem = passo.imagem {
+                        Image(imagem)
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 280, height: 360)
+                            .clipped()
+                            .cornerRadius(16)
                     }
+
+                    // Título
+                    Text(passo.titulo)
+                        .font(.title2)
+                        .bold()
+                        .multilineTextAlignment(.center)
+                        .padding(.horizontal)
+
+                    // Descrição
+                    Text(passo.descricao)
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(.secondary)
+                        .padding(.horizontal, 24)
+
+                    Spacer()
                 }
-                .tabViewStyle(.page(indexDisplayMode: .always))
-                .indexViewStyle(.page(backgroundDisplayMode: .always))
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .padding()
             }
-            .navigationTitle(titulo)
-            .navigationBarTitleDisplayMode(.inline)
-        
+        }
+        .tabViewStyle(.page(indexDisplayMode: .always))
+        .indexViewStyle(.page(backgroundDisplayMode: .always))
+        .navigationTitle(titulo)
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
-// MARK: - Preview
 #Preview {
     NavigationStack {
         DetalhePaginasGuias(
             titulo: "Exemplo de Teste",
             passos: [
-                // ATENÇÃO: "foto1" e "foto2" devem ser os nomes exatos das imagens no seu Assets.xcassets
                 PassoGuia(
-                    imagem: "foto1",
-                    titulo: "Passo Inicial",
-                    descricao: "Esta é uma pré-visualização de como a tela se comporta com fotos."
+                    imagem: nil,
+                    titulo: "Estudo Passivo",
+                    descricao: "Acontece quando você apenas absorve a informação, sem interagir com ela. É o caso de assistir a aulas ou ler livros. O cérebro faz pouco esforço, o que facilita o esquecimento."
                 ),
+
                 PassoGuia(
                     imagem: "foto2",
-                    titulo: "Passo Final",
-                    descricao: "Adicione quantos passos forem necessários."
+                    titulo: "Estudo Ativo",
+                    descricao: "O estudo ativo faz você recuperar, organizar e aplicar o conhecimento, fortalecendo a aprendizagem."
                 )
             ]
         )
     }
 }
+
+
