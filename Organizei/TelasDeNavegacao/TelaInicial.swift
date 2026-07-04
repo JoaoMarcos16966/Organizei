@@ -47,6 +47,7 @@ struct TelaInicial: View {
                         } label: {
                             TelaModeloAtividade(atividade: atividade)
                         }
+                        .buttonStyle(.plain)
                     }
                     
                     ForEach(concluidas) { atividade in
@@ -55,6 +56,7 @@ struct TelaInicial: View {
                         } label: {
                             TelaModeloAtividade(atividade: atividade)
                         }
+                        .buttonStyle(.plain)
                     }
                     
                     Spacer()
