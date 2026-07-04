@@ -173,10 +173,10 @@ struct TelaModeloAtividade: View {
             
             
         }
-        .onTapGesture {
-            //            //MARK: Colocar aqui botao de apertar para editar hobby
-            print("cliquei na zstack")
-        }
+//        .onTapGesture {
+//            //            //MARK: Colocar aqui botao de apertar para editar hobby
+//            print("cliquei na zstack")
+//        }
 
     }
 }

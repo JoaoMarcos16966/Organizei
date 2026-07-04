@@ -42,11 +42,21 @@ struct TelaInicial: View {
                 VStack {
                     
                     ForEach(pendentes) { atividade in
-                        TelaModeloAtividade(atividade: atividade)
+                        NavigationLink{
+                            TelaVisualizarAtividade(atividade: atividade)
+                        } label: {
+                            TelaModeloAtividade(atividade: atividade)
+                        }
+                        .buttonStyle(.plain)
                     }
                     
                     ForEach(concluidas) { atividade in
-                        TelaModeloAtividade(atividade: atividade)
+                        NavigationLink{
+                            TelaVisualizarAtividade(atividade: atividade)
+                        } label: {
+                            TelaModeloAtividade(atividade: atividade)
+                        }
+                        .buttonStyle(.plain)
                     }
                     
                     Spacer()
