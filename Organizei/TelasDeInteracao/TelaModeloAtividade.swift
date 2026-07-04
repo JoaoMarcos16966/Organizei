@@ -9,17 +9,18 @@ import SwiftUI
 
 
 struct TelaModeloAtividade: View {
-    @State var concluido: Bool = false
     var atividade: AtividadeModel
     
     func marcar() {
-        concluido.toggle()
+        withAnimation(.spring(response: 0.4, dampingFraction: 0.8)) {
+            atividade.concluido.toggle()
+        }
     }
     
     var body: some View {
 
         ZStack(alignment: .leading) {
-                if !concluido{
+            if !atividade.concluido{
                     Rectangle()
                     .fill(Color(
                         red: Double(atividade.prioridade.cores[0]) / 255.0,
@@ -97,6 +98,7 @@ struct TelaModeloAtividade: View {
                                 
                                 Text(atividade.icone) // alterar para Atividade.icone
                                     .font(.largeTitle)
+                                    .opacity(0.4)
                                 
                             }
                             .padding(10)
@@ -104,18 +106,20 @@ struct TelaModeloAtividade: View {
                             VStack {
                                 Text("\(atividade.nome)")
                                     .font(.title3)
+                                    .opacity(0.5)
                                     .frame(width: 118 ,  alignment: .leading)
                                 
                                 Text("\(atividade.frequenciaRepeticao)")
                                     .font(.caption2)
-                                    .foregroundStyle(Color.black)
-                                    .opacity(0.4)
+                                    .foregroundStyle(Color.primary)
+                                    .opacity(0.5)
                                     .multilineTextAlignment(.leading)
                                     .frame(width: 118 , alignment: .leading)
                                 
                                 Text("\(atividade.horaInicio, format: .dateTime.hour().minute()) - \(atividade.horaTermino, format: .dateTime.hour().minute())")
                                     .font(.caption2)
-                                    .foregroundStyle(Color.black)
+                                    .foregroundStyle(Color.primary)
+                                    .opacity(0.5)
                                     .multilineTextAlignment(.leading)
                                     .frame(width: 118 , height: 5, alignment: .leading)
                                 

@@ -19,8 +19,9 @@ class AtividadeModel {
     var frequenciaRepeticao: String
     var prioridade: Prioridade
     var icone: String
+    var concluido: Bool
     
-    init(nome: String, data: Date, horaInicio: Date, horaTermino: Date, repetirAtividade: Bool, frequenciaRepeticao: String, prioridade: Prioridade, icone: String) {
+    init(nome: String, data: Date, horaInicio: Date, horaTermino: Date, repetirAtividade: Bool, frequenciaRepeticao: String, prioridade: Prioridade, icone: String, concluido: Bool = false) {
         self.id = UUID()
         self.nome = nome
         self.data = data
@@ -30,5 +31,6 @@ class AtividadeModel {
         self.frequenciaRepeticao = frequenciaRepeticao
         self.prioridade = prioridade
         self.icone = icone
+        self.concluido = concluido
     }
 }
