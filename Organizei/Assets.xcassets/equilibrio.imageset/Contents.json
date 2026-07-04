@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "16059984-equilibrando-o-sentimento-de-controle-emocional-entre-estresse-ou-tristeza-e-estilo-de-vida-feliz-inteligencia-emocional-homem-tenta-equilibrar-sorriso-e-simbolo-de-rosto-triste-vetor.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -57,14 +57,14 @@ struct Produtividade: View {
                         // Item 1: Feynman
                         NavigationLink {
                             DetalhePaginasGuias(
-                                titulo: "Estudo Ativo vs Passivo",
+                                titulo: "Planejar Atividades",
                                 passos: [
-                                    PassoGuia(imagem: "1.circle.fill", titulo: "Passo 1: Escolha o tema", descricao: "Escreva tudo o que você já sabe sobre o assunto em uma folha de papel em branco.")
+                                    PassoGuia(imagem: "Frame 7", titulo: "Planejamento de Tarefas", descricao: "Para otimizar seu tempo, o ideal é visualizar suas atividades do dia em uma lista com ordem de prioridade!")
                                 ]
                             )
                         } label: {
                             HStack(spacing: 12) {
-                                Image("Estudos")
+                                Image("planejamento")
                                     .resizable()
                                     .scaledToFill()
                                     .frame(width: 60, height: 60)
@@ -88,14 +88,14 @@ struct Produtividade: View {
                         // Item 2: Flashcards
                         NavigationLink {
                             DetalhePaginasGuias(
-                                titulo: "Flashcards",
+                                titulo: "Técnica Pomodoro",
                                 passos: [
-                                    PassoGuia(imagem: "questionmark.bubble.fill", titulo: "Frente do Card", descricao: "Coloque uma pergunta direta que force a sua recordação ativa.")
+                                    PassoGuia(imagem: "Frame 6", titulo: "Pomodoro", descricao: "Consiste em focar em uma tarefa por 25 minutos ininterruptos seguidos por uma pausa de 5 minutos.")
                                 ]
                             )
                         } label: {
                             HStack(spacing: 12) {
-                                Image("flashcards")
+                                Image("foco")
                                     .resizable()
                                     .scaledToFill()
                                     .frame(width: 60, height: 60)
@@ -115,37 +115,6 @@ struct Produtividade: View {
                             }
                         }
                         Divider()
-                        //Item 3
-                        NavigationLink {
-                            DetalhePaginasGuias(
-                                titulo: "Técnica Feynman",
-                                passos: [
-                                    PassoGuia(imagem: "1.circle.fill", titulo: "Passo 1: Escolha o tema", descricao: "Escreva tudo o que você já sabe sobre o assunto em uma folha de papel em branco.")
-                                ]
-                            )
-                        } label: {
-                            HStack(spacing: 12) {
-                                Image("MapaMental")
-                                    .resizable()
-                                    .scaledToFill()
-                                    .frame(width: 60, height: 60)
-                                    .clipped()
-                                
-                                VStack(alignment: .leading, spacing: 4) {
-                                    Text("Descanso")
-                                        .font(.headline)
-                                        .foregroundColor(.primary)
-                                    Text("Lembrar de que pausas regulares evit...")
-                                        .font(.subheadline)
-                                        .foregroundColor(.secondary)
-                                        .multilineTextAlignment(.leading)
-                                }
-                                Spacer()
-                            }
-                        }
-                        
-                        Divider()
-                       
                         
                     }
                     .padding(.horizontal)

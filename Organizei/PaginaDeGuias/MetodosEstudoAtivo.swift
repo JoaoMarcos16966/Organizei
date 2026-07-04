@@ -60,11 +60,12 @@ struct MetodosEstudoAtivo: View {
                             DetalhePaginasGuias(
                                 titulo: "Estudo Ativo vs Passivo",
                                 passos: [
-                                    PassoGuia(imagem: "Ativo", titulo: "Estudo Ativo", descricao: "O estudo ativo é uma abordagem de aprendizado onde o estudante é estimulado a processar, analisar e gerar algo a partir do conteúdo."),
                                     
-                                    PassoGuia(imagem: "Passivo", titulo: "Estudo Passivo", descricao: "Acontece quando você apenas absorve a informação, sem interagir com ela. É o caso de assistir a aulas ou ler livros. O cérebro faz pouco esforço, o que facilita o esquecimento."),
+                                    PassoGuia(imagem: "Frame 1", titulo: "Estudo Passivo", descricao: "Acontece quando você apenas absorve a informação, sem interagir com ela. É o caso de assistir a aulas ou ler livros. O cérebro faz pouco esforço."),
                                     
-                                    PassoGuia(imagem: "Passiv", titulo: "Estudo Passivo", descricao: "Acontece quando você apenas absorve a informação, sem interagir com ela. É o caso de assistir a aulas ou ler livros. O cérebro faz pouco esforço, o que facilita o esquecimento.")
+                                    PassoGuia(imagem: "Frame 2", titulo: "Estudo Ativo", descricao: "O estudo ativo é uma abordagem de aprendizado onde o estudante é estimulado a processar, analisar e gerar algo a partir do conteúdo."),
+                                    
+                                    PassoGuia(imagem: nil, titulo: "Exemplo de Estudos Ativos:", descricao: "\n \n FlashCards\n Mapas Mentais\n Resolução de Questões\n Técnica Feynman\n \n \n \n Essas técnicas de estudo ativo forçam o cérebro a recuperar e manipular informações (em vez de apenas recebê-las passivamente), o que tira você da ilusão de conhecimento. Isso consolida o conteúdo na memória de longo prazo, melhora o pensamento crítico e revela exatamente quais pontos você ainda não entendeu.")
                                 ]
                             )
                         } label: {
@@ -96,7 +97,9 @@ struct MetodosEstudoAtivo: View {
                             DetalhePaginasGuias(
                                 titulo: "Flashcards",
                                 passos: [
-                                    PassoGuia(imagem: "questionmark.bubble.fill", titulo: "Flashcards", descricao: "Coloque uma pergunta direta que force a sua recordação ativa.")
+                                    PassoGuia(imagem: "Frame 3", titulo: "Flashcards", descricao: "São fichas de estudo que apresentam uma pergunta, conceito ou palavra-chave de um lado, e a resposta correspondente no verso. "),
+                                    
+                                    PassoGuia(imagem: nil, titulo: "Como fazer?", descricao: "\n  Fazer flashcards é simples: escolha um lado para a pergunta e o verso para a resposta curta. Use papel (como fichários cortados). Seja objetivo, use palavras-chave e revise a pilha até memorizar todos. \n Eles são utilizados para testar o seu conhecimento de forma rápida, estimulando a recuperação ativa da informação na memória. Ótima técnica para você estudar ativamente 😉")
                                 ]
                             )
                         } label: {
@@ -125,9 +128,9 @@ struct MetodosEstudoAtivo: View {
                         //Item 3
                         NavigationLink {
                             DetalhePaginasGuias(
-                                titulo: "Técnica Feynman",
+                                titulo: "Mapa Mental",
                                 passos: [
-                                    PassoGuia(imagem: "1.circle.fill", titulo: "Passo 1: Escolha o tema", descricao: "Escreva tudo o que você já sabe sobre o assunto em uma folha de papel em branco.")
+                                    PassoGuia(imagem: "Frame 4", titulo: "Mapas Mentais", descricao: "Diagramas visuais que organizam ideias e conceitos em torno de um tema central, facilitando a memorização e o raciocínio.")
                                 ]
                             )
                         } label: {
@@ -155,42 +158,6 @@ struct MetodosEstudoAtivo: View {
                         Divider()
                         
                         //Item 4
-                        NavigationLink {
-                            DetalhePaginasGuias(
-                                titulo: "Técnica Feynman",
-                                passos: [
-                                    PassoGuia(imagem: "1.circle.fill", titulo: "Passo 1: Escolha o tema", descricao: "Escreva tudo o que você já sabe sobre o assunto em uma folha de papel em branco.")
-                                ]
-                            )
-                        } label: {
-                            HStack(spacing: 12) {
-                                Image("Simulados")
-                                    .resizable()
-                                    .scaledToFill()
-                                    .frame(width: 60, height: 60)
-                                    .clipped()
-                                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                                
-                                VStack(alignment: .leading, spacing: 4) {
-                                    Text("Resolução de Questões e Simula...")
-                                        .font(.headline)
-                                        .foregroundColor(.primary)
-                                    Text("A resolução de questões e simulados...")
-                                        .font(.subheadline)
-                                        .foregroundColor(.secondary)
-                                        .multilineTextAlignment(.leading)
-                                }
-                                Spacer()
-                            }
-                        }
-                        
-                        Divider()
-                        
-                        
-                        
-                        
-                        
-                        
                         
                     }
                     .padding(.horizontal)
