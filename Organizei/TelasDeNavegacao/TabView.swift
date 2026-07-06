@@ -21,18 +21,20 @@ struct TABView: View {
                         )
                     }
             }
-
-            // MARK: Tela do calendario
-            withAnimation {
-                Calendario()
-                    .tabItem {
-                        Label(
-                            "Calendário",
-                            systemImage:
-                                "calendar"
-                        )
-                    }
-            }
+//
+//            // MARK: Tela do calendario
+//            withAnimation {
+//                Calendario()
+//                    .tabItem {
+//                        Label(
+//                            "Calendário",
+//                            systemImage:
+//                                "calendar"
+//                        )
+//                    }
+//            }
+            
+            //Projetos futuros
             // MARK: Tela do Pomodoro
             withAnimation {
                 Pomodoro()
